@@ -1,0 +1,45 @@
+<app-my-header name="Лабораторна робота №1"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Завдання №2</ion-card-title>
+      <ion-card-subtitle>
+        Згенерувати матрицю розміром NxN. Виокремити за допомогою кольору усі
+        парні від’ємні елементи, якщо їх кількість непарна.
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input
+          label="Введіть N"
+          labelPlacement="stacked"
+          type="number"
+          id="a"
+          value="1"
+          min="1"
+          max="9"
+          #InputN
+        ></ion-input>
+      </ion-item>
+      <ion-button (click)="calculator(InputN.value)" expand="block"
+        >Розрахунок</ion-button
+      >
+      <ion-grid>
+        <ion-row *ngFor="let i of result">
+          <ion-col
+            *ngFor="let j of i"
+            [ngClass]="{
+              'negative-class': j < 0 && j%2==0 && count_of_negative_numbers%2==1,
+              'positive-class': !(j < 0 && j%2==0 && count_of_negative_numbers%2==1)
+            }"
+            >{{j}}</ion-col
+          >
+        </ion-row>
+        <p class="result_task_3">
+          Кількість від'ємних парних елементів: {{count_of_negative_numbers}}
+        </p>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

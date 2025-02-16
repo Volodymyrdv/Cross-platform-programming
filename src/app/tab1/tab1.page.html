@@ -1,0 +1,53 @@
+<app-my-header name="Лабораторна робота №1"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Завдання №1</ion-card-title>
+      <ion-card-subtitle>
+        Задано три числа. Якщо хоч одне з них парне, то знайти куб суми. В
+        іншому випадку – суму кубів чисел, якщо сума їхніх цифр непарна.
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input
+          label="Перше число"
+          labelPlacement="stacked"
+          type="number"
+          id="a"
+          value="1"
+          #Inputa
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Друге число"
+          labelPlacement="stacked"
+          type="number"
+          id="b"
+          value="1"
+          #Inputb
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Третє число"
+          labelPlacement="stacked"
+          type="number"
+          id="c"
+          value="1"
+          #Inputc
+        ></ion-input>
+      </ion-item>
+      <ion-button
+        (click)="calculator(Inputa.value, Inputb.value, Inputc.value)"
+        expand="block"
+        >Розрахунок</ion-button
+      >
+      <p *ngIf="result!=0" class="result_task_1">
+        Результат обчислення: {{result}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

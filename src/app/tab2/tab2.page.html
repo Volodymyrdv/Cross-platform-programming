@@ -1,0 +1,44 @@
+<app-my-header name="Лабораторна робота №1"></app-my-header>
+<ion-content [fullscreen]="true">
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Завдання №2</ion-card-title>
+      <ion-card-subtitle>
+        Знайдіть суму парних чисел на заданому проміжку чисел [a, b]. Потрібно
+        вивести як самі числа так і результати обрахунку, якщо їх сума більша за
+        100.
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input
+          label="Ліва границя а"
+          labelPlacement="stacked"
+          type="number"
+          id="a"
+          value="1"
+          #Inputa
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input
+          label="Права границя b"
+          labelPlacement="stacked"
+          type="number"
+          id="b"
+          value="1"
+          #Inputb
+        ></ion-input>
+      </ion-item>
+      <ion-button (click)="calculator(Inputa.value,Inputb.value)" expand="block"
+        >Розрахунок</ion-button
+      >
+      <ion-grid *ngIf="sum>100">
+        <ion-row>
+          <ion-col *ngFor="let number of evenNumbers">{{number}}</ion-col>
+        </ion-row>
+        <p class="result_task_2">Sum of evenNumbers: {{sum}}</p>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
