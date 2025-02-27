@@ -1,0 +1,57 @@
+<app-my-header name="Лабораторна №2"></app-my-header>
+<ion-content [fullscreen]="true">
+  <ion-toolbar>
+    <ion-card class="ion-padding">
+      <ion-card-header>
+        <ion-card-title>Завдання</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ul>
+          <p class="ion-text-bold">9. Перелік основних дисциплін:</p>
+          <li>• Назва дисципліни.</li>
+          <li>• Кафедра, на якій читається дисципліна.</li>
+          <li>• ПІБ викладача, який читає лекції.</li>
+          <li>• ПІБ викладача, що веде лабораторні заняття.</li>
+          <li>Згрупувати дисципліни по викладачах</li>
+          <li>Вивести графік по кількості дисциплін у кожного викладача</li>
+        </ul>
+      </ion-card-content>
+    </ion-card>
+  </ion-toolbar>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Список викладачів та їх дисциплін</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let teacherDiscipline of teacherDisciplines">
+          <ion-label>
+            <h2>{{ teacherDiscipline.teacherName }}</h2>
+            <ul *ngIf="teacherDiscipline.disciplinesLecture.length != 0">
+              <h3>Лекційні дисципліни:</h3>
+              <li *ngFor="let lecture of teacherDiscipline.disciplinesLecture">
+                {{ lecture[0] }} ({{ lecture[1] }})
+              </li>
+            </ul>
+            <ul *ngIf="teacherDiscipline.disciplinesLab.length != 0">
+              <h3>Лабораторні дисципліни:</h3>
+              <li *ngFor="let lab of teacherDiscipline.disciplinesLab">
+                {{ lab[0] }} ({{ lab[1] }})
+              </li>
+            </ul>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Графік кількості дисциплін у викладачів</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="chart-container">
+        <canvas #lineCanvas></canvas>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
