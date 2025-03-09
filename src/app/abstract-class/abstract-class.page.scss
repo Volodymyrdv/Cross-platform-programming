@@ -1,0 +1,36 @@
+.custom-card {
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.task-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-button {
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.result-item {
+  --background: var(--ion-text-color-step-450);
+  font-size: 1rem;
+  color: #444;
+  padding: 10px 0;
+  font-weight: bold;
+}

@@ -1,0 +1,45 @@
+<app-my-header name="Лабораторна №3"></app-my-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title class="title">Завдання</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p class="task-text">
+        Створити батьківський абстрактий клас ВоднийТранспорт, який містить поля
+        для назви транспорту, швидкості та місткості, а також методи для
+        отримання швидкості та виведення інформації про транспорт. На основі
+        цього класу реалізувати два підкласи: Катер, який має додаткове поле для
+        типу двигуна, та Лодка, яка містить поле, що вказує на наявність
+        веслування. Далі потрібно реалізувати функціональність для знаходження n
+        найшвидших транспортів залежно від їх швидкості.
+      </p>
+      <ion-item class="input-container">
+        <ion-input
+          label="Значення n"
+          type="number"
+          min="1"
+          max="20"
+          #numberTransport
+        ></ion-input>
+        <ion-button
+          class="custom-button"
+          (click)="filterTopTransport(numberTransport.value)"
+        >
+          Розрахунок
+        </ion-button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title class="title">Результат</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item *ngFor="let item of transportTop" class="result-item">
+        {{item.displayInfo()}}
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

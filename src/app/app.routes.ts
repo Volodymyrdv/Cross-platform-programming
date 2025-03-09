@@ -9,4 +9,8 @@ export const routes: Routes = [
     path: 'disciplines',
     loadComponent: () => import('./disciplines/disciplines.page').then( m => m.DisciplinesPage)
   },
+  {
+    path: 'abstract-class',
+    loadComponent: () => import('./abstract-class/abstract-class.page').then( m => m.AbstractClassPage)
+  },
 ];
