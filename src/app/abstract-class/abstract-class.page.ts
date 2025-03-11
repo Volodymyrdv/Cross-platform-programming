@@ -39,7 +39,7 @@ export class AbstractClassPage implements OnInit {
   data: any = [];
   transport: WaterTransport[] = [];
   transportTop: WaterTransport[] = [];
-  dataURL: string = 'https://api.jsonbin.io/v3/b/67cd9f76acd3cb34a8f79ed6';
+  dataURL: string = 'https://api.jsonbin.io/v3/b/67cf7e348a456b7966737666';
   async loadData() {
     this.data = [];
     this.transport = [];
